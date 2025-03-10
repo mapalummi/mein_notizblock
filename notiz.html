@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Notizen</title>
+    <link rel="shortcut icon" href="./assets/icons/icons8-apfelnoten-120.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/note.css">
+
+    <script src="./scripts/template.js"></script>
+    <script src="./script.js"></script>
+    
+</head>
+<body onload="renderNotes()">
+
+<div class="main_container">
+
+    <header>
+        <h1>My Notes</h1>
+    </header>
+
+    <div class="content_container">
+
+    <div class="input_container">
+        <p>Titel</p>
+        <input class="input_field" id="input_title" type="text" required>
+        <p>Text</p>
+        <input class="input_field" id="input_text" type="text" required>
+        <a onclick="addNote()" href="#"><img class="add_btn" src="./assets/icons/icons8-hinzufügen.png" alt=""></a>
+    </div>
+
+    
+    <div class="note_container" id="note_content"></div>
+    <div class="archiv" id="archive_content">Archiv</div>
+    <div class="trash" id="trash_content">Papierkorb</div>
+
+    </div>
+
+    
+
+</div>
+
+</body>
+</html>
