@@ -69,16 +69,20 @@ h1{
     gap: 12px;
 }
 
-.archiv{
-    height: 200px;
+.archive_container{
+    height: auto;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
+    margin: 20px;
+    gap: 12px;
 }
 
-.trash{
-    height: 200px;
+.trash_container{
+    height: auto;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
+    margin: 20px;
+    gap: 12px;
 }

@@ -11,11 +11,66 @@
     padding: 8px;
     border-radius: 8px;
 }
+
 .note p{
     display: flex;
     flex-direction: column;
 }
+
 .note a{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 45%;
+}
+
+
+.archive_note{
+    height: 150px;
+    width: 150px;
+    background-color: #7d9af1;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.archive_note p{
+    display: flex;
+    flex-direction: column;
+}
+
+.archive_note a{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 45%;
+}
+
+.del_note{
+    height: 150px;
+    width: 150px;
+    background-color: #cac9c6;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.del_note p{
+    display: flex;
+    flex-direction: column;
+}
+
+.del_note a{
     text-align: center;
     color: black;
     text-decoration: none;
