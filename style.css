@@ -1,105 +1,98 @@
-*{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0;
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
 }
 
-.d_none{
-    display: none;
+.d_none {
+  display: none;
 }
 
-header{
-    background-color: #2f294f;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header {
+  background-color: #2f294f;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1{
-    font-size: 44px;
-    color: #f5b31e;
+h1 {
+  font-size: 44px;
+  color: #f5b31e;
 }
 
-.main_container{
-    height: 100vh;
-    width: 100%;
-    background-color: #534d73;
+.main_container {
+  height: 100vh;
+  width: 100%;
+  background-color: #534d73;
 }
 
-.content_container{
-    width: 100%;
-    height: calc(100vh - 124px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.content_container {
+  width: 100%;
+  height: calc(100vh - 124px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.input_container{
-    height: 400px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-left: 24px;
+.input_container {
+  height: 250px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  /* padding-left: 24px; */
 }
 
-.input_container p{
-    font-size: 24px;
-    height: 32px;
-    color: #ffe19f;
+.input_container p {
+  font-size: 24px;
+  height: 32px;
+  color: #ffe19f;
 }
 
-.input_field{
-    height: 30px;
-    width: 300px;
-    font-size: 18px;
+.input_field {
+  height: 30px;
+  width: 300px;
+  font-size: 18px;
 }
 
-.add_btn{
-    width: 38px;
-    height: 38px;
-    padding-top: 8px;
+.add_btn {
+  width: 38px;
+  height: 38px;
+  padding-top: 8px;
 }
 
-
-
-
-
-
-.note_container{
-    height: 350px;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-    gap: 12px;
+.note_container {
+  height: 350px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 20px; */
+  gap: 12px;
 }
 
-.archive_container{
-    height: 250px;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-    gap: 12px;
+.archive_container {
+  height: 250px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 20px; */
+  gap: 12px;
 }
 
-.trash_container{
-    height: 250px;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-    gap: 12px;
+.trash_container {
+  height: 250px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 12px;
 }
 
-
-
-.deleted_notes_button{
-    background-color: #04AA6D; /* Green */
+.deleted_notes_button {
+  background-color: #04aa6d; /* Green */
   border: none;
   color: white;
   padding: 16px 32px;
@@ -113,39 +106,36 @@ h1{
 }
 
 .button_grey {
-    background-color: white;
-    color: black;
-    border: 2px solid #b7b7b7;
-  }
-  
-  .button_grey:hover {
-    background-color: #f5b31e;
+  background-color: white;
+  color: black;
+  border: 2px solid #b7b7b7;
 }
 
-footer{
-    height: 24px;
-    background-color: #2f294f;
-    color: white;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button_grey:hover {
+  background-color: #f5b31e;
 }
 
-footer a{
-    color: white;
-    text-decoration: none;
-    padding-left: 4px;
+footer {
+  height: 24px;
+  background-color: #2f294f;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.14);
+footer a {
+  color: white;
+  text-decoration: none;
+  padding-left: 4px;
 }
-.d_none{
-    display: none;
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.523);
 }

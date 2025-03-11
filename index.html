@@ -15,9 +15,8 @@
 
     <script src="./scripts/template.js"></script>
     <script src="./script.js"></script>
-    
   </head>
-  <body onload="init()">
+  <body onload="renderNotes(), renderArchive(), renderTrashNotes()">
     <div class="main_container">
       <header>
         <h1>My Notes</h1>
@@ -38,18 +37,22 @@
         </div>
 
         <div class="note_container" id="note_content"></div>
-        <div class="archive_container" id="archive_content">Archivierte Notizen</div>
-
-        
+        <div class="archive_container" id="archive_content">
+          Archivierte Notizen
+        </div>
 
         <div onclick="removeOverlay()" id="overlay" class="overlay d_none">
-            <div class="trash_container" id="trash_content"></div>
+          <div class="trash_container" id="trash_content"></div>
         </div>
 
         <div>
-        <button class="deleted_notes_button button_grey" onclick="addOverlay()">Show Deleted Notes</button>
+          <button
+            class="deleted_notes_button button_grey"
+            onclick="addOverlay()"
+          >
+            Show Deleted Notes
+          </button>
         </div>
-
       </div>
 
       <footer>

@@ -7,15 +7,9 @@ let archiveNotes = [];
 let trashNotesTitles = [];
 let trashNotes = [];
 
-//Achtung neu!
-function init(){
-    noteFromLocalStorage();
-    renderNotes();
-}
-
-
-//Funktioniert:
 function renderNotes() {
+  noteFromLocalStorage();
+
   document.getElementById("note_content").innerHTML = "";
 
   for (let i = 0; i < myNotes.length; i++) {
@@ -24,6 +18,8 @@ function renderNotes() {
 }
 
 function renderArchive() {
+  archiveFromLocalStorage();
+
   document.getElementById("archive_content").innerHTML = "";
 
   for (let iArchive = 0; iArchive < archiveNotes.length; iArchive++) {
@@ -32,8 +28,9 @@ function renderArchive() {
   }
 }
 
-//Funktioniert:
 function renderTrashNotes() {
+  trashFromLocalStorage();
+
   document.getElementById("trash_content").innerHTML = "";
 
   for (let iTrash = 0; iTrash < trashNotes.length; iTrash++) {
@@ -42,7 +39,6 @@ function renderTrashNotes() {
   }
 }
 
-//Funktioniert:
 function addNote() {
   let inputTitleValue = document.getElementById("input_title").value;
   let inputTextValue = document.getElementById("input_text").value;
@@ -57,37 +53,65 @@ function addNote() {
 
     //Achtung neu!
     noteToLocalStorage();
-
     renderNotes();
+
+    //Kann das weg?
+    // renderArchive();
+    // renderTrashNotes();
 
     document.getElementById("input_title").value = "";
     document.getElementById("input_text").value = "";
   }
 }
 
+//Neu!
+function noteToLocalStorage() {
+  localStorage.setItem("myTitles", JSON.stringify(myTitles));
+  localStorage.setItem("myNotes", JSON.stringify(myNotes));
+}
+function noteFromLocalStorage() {
+  let newTitles = JSON.parse(localStorage.getItem("myTitles"));
+  let newNotes = JSON.parse(localStorage.getItem("myNotes"));
 
-//Achtung neu:
-function noteToLocalStorage(){
-    localStorage.setItem("myTitles", JSON.stringify(myTitles));
-    localStorage.setItem("myNotes", JSON.stringify(myNotes));
+  if (newTitles != null && newNotes != null) {
+    myTitles = newTitles;
+    myNotes = newNotes;
+  }
 }
 
-function noteFromLocalStorage(){
-    let newTitles = JSON.parse(localStorage.getItem("myTitles"));
-    let newNotes = JSON.parse(localStorage.getItem("myNotes"));
+//NEU
+function archiveToLocalStorage() {
+  localStorage.setItem(
+    "archiveNotesTitles",
+    JSON.stringify(archiveNotesTitles)
+  );
+  localStorage.setItem("archiveNotes", JSON.stringify(archiveNotes));
+}
+function archiveFromLocalStorage() {
+  let newArchiveTitles = JSON.parse(localStorage.getItem("archiveNotesTitles"));
+  let newArchiveNotes = JSON.parse(localStorage.getItem("archiveNotes"));
 
-    if (newTitles != null && newNotes != null) {
-        myTitles = newTitles;
-        myNotes = newNotes;
-    }
+  if (newArchiveTitles != null && newArchiveNotes != null) {
+    archiveNotesTitles = newArchiveTitles;
+    archiveNotes = newArchiveNotes;
+  }
 }
 
+//NEU
+function trashToLocalStorage() {
+  localStorage.setItem("trashNotesTitles", JSON.stringify(trashNotesTitles));
+  localStorage.setItem("trashNotes", JSON.stringify(trashNotes));
+}
+function trashFromLocalStorage() {
+  let newTrashTitles = JSON.parse(localStorage.getItem("trashNotesTitles"));
+  let newTrashNotes = JSON.parse(localStorage.getItem("trashNotes"));
 
+  if (newTrashTitles != null && newTrashNotes != null) {
+    trashNotesTitles = newTrashTitles;
+    trashNotes = newTrashNotes;
+  }
+}
 
-
-
-
-//Funktioniert:
 function noteToTrash(i) {
   let trashNote = myNotes.splice(i, 1);
   trashNotes.push(trashNote[0]);
@@ -95,8 +119,13 @@ function noteToTrash(i) {
   let trashNoteTitle = myTitles.splice(i, 1);
   trashNotesTitles.push(trashNoteTitle[0]);
 
+  noteToLocalStorage();
   renderNotes();
+
+  archiveToLocalStorage();
   renderArchive();
+
+  trashToLocalStorage();
   renderTrashNotes();
 }
 
@@ -107,12 +136,16 @@ function noteToArchive(i) {
   let archiveNoteTitle = myTitles.splice(i, 1);
   archiveNotesTitles.push(archiveNoteTitle[0]);
 
+  noteToLocalStorage();
   renderNotes();
+
+  archiveToLocalStorage();
   renderArchive();
+
+  trashToLocalStorage();
   renderTrashNotes();
 }
 
-//Funktioniert:
 function archiveNoteToTrash(iArchive) {
   let archiveNote = archiveNotes.splice(iArchive, 1);
   trashNotes.push(archiveNote[0]);
@@ -120,12 +153,16 @@ function archiveNoteToTrash(iArchive) {
   let archiveNoteTitle = archiveNotesTitles.splice(iArchive, 1);
   trashNotesTitles.push(archiveNoteTitle[0]);
 
+  noteToLocalStorage();
   renderNotes();
+
+  archiveToLocalStorage();
   renderArchive();
+
+  trashToLocalStorage();
   renderTrashNotes();
 }
 
-//Funktioniert:
 function archiveNoteRestore(iArchive) {
   let restoreArchiveNote = archiveNotes.splice(iArchive, 1);
   myNotes.push(restoreArchiveNote[0]);
@@ -133,12 +170,16 @@ function archiveNoteRestore(iArchive) {
   let restoreArchiveTitle = archiveNotesTitles.splice(iArchive, 1);
   myTitles.push(restoreArchiveTitle[0]);
 
+  noteToLocalStorage();
   renderNotes();
+
+  archiveToLocalStorage();
   renderArchive();
+
+  trashToLocalStorage();
   renderTrashNotes();
 }
 
-//Funktioniert:
 function deletedNoteRestore(iTrash) {
   let restoreNote = trashNotes.splice(iTrash, 1);
   archiveNotes.push(restoreNote[0]);
@@ -146,26 +187,34 @@ function deletedNoteRestore(iTrash) {
   let restoreTitle = trashNotesTitles.splice(iTrash, 1);
   archiveNotesTitles.push(restoreTitle[0]);
 
+  noteToLocalStorage();
   renderNotes();
+
+  archiveToLocalStorage();
   renderArchive();
+
+  trashToLocalStorage();
   renderTrashNotes();
 }
 
-//Funktioniert:
 function deleteNote(iTrash) {
   trashNotes.splice(iTrash, 1);
   trashNotesTitles.splice(iTrash, 1);
 
+  noteToLocalStorage();
   renderNotes();
+
+  archiveToLocalStorage();
   renderArchive();
+
+  trashToLocalStorage();
   renderTrashNotes();
 }
 
-
-function addOverlay(){
-  document.getElementById('overlay').classList.remove('d_none');
+function addOverlay() {
+  document.getElementById("overlay").classList.remove("d_none");
 }
 
-function removeOverlay(){
-  document.getElementById('overlay').classList.add('d_none');
+function removeOverlay() {
+  document.getElementById("overlay").classList.add("d_none");
 }
