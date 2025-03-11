@@ -1,7 +1,6 @@
 .note{
-    height: 150px;
-    width: 150px;
-    /* background-color: #fff6e2; */
+    height: 250px;
+    width: 200px;
     background-color: #face67;
     color: black;
     display: flex;
@@ -17,18 +16,15 @@
     flex-direction: column;
 }
 
-.note a{
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    border: 1px solid black;
-    border-radius: 45%;
+.note img{
+    width: 28px;
+    height: 28px;
 }
 
 
 .archive_note{
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 180px;
     background-color: #7d9af1;
     color: black;
     display: flex;
@@ -44,17 +40,14 @@
     flex-direction: column;
 }
 
-.archive_note a{
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    border: 1px solid black;
-    border-radius: 45%;
+.archive_note img{
+    width: 28px;
+    height: 28px;
 }
 
 .del_note{
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     background-color: #cac9c6;
     color: black;
     display: flex;
@@ -68,12 +61,16 @@
 .del_note p{
     display: flex;
     flex-direction: column;
+    text-decoration: line-through;
 }
 
-.del_note a{
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    border: 1px solid black;
-    border-radius: 45%;
+.del_note img{
+    width: 28px;
+    height: 28px;
+}
+
+.btn_icons{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
 }

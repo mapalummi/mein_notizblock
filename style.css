@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.d_none{
+    display: none;
+}
+
 header{
     background-color: #2f294f;
     width: 100%;
@@ -25,14 +29,14 @@ h1{
 
 .content_container{
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 124px);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .input_container{
-    height: 300px;
+    height: 400px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -60,8 +64,13 @@ h1{
     padding-top: 8px;
 }
 
+
+
+
+
+
 .note_container{
-    height: auto;
+    height: 350px;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -70,7 +79,7 @@ h1{
 }
 
 .archive_container{
-    height: auto;
+    height: 250px;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -79,10 +88,64 @@ h1{
 }
 
 .trash_container{
-    height: auto;
+    height: 250px;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
     gap: 12px;
+}
+
+
+
+.deleted_notes_button{
+    background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button_grey {
+    background-color: white;
+    color: black;
+    border: 2px solid #b7b7b7;
+  }
+  
+  .button_grey:hover {
+    background-color: #f5b31e;
+}
+
+footer{
+    height: 24px;
+    background-color: #2f294f;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    padding-left: 4px;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.14);
+}
+.d_none{
+    display: none;
 }
