@@ -1,0 +1,158 @@
+@media screen and (max-width: 880px) {
+  .note {
+    height: 100px;
+    width: 100px;
+    background-color: #face67;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .note p {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  .note img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .archive_note {
+    height: 100px;
+    width: 100px;
+    background-color: #7d9af1;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .archive_note p {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  .archive_note img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .del_note {
+    height: 100px;
+    width: 100px;
+    background-color: #cac9c6;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .del_note p {
+    display: flex;
+    flex-direction: column;
+    text-decoration: line-through;
+    font-size: 14px;
+  }
+
+  .del_note img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .btn_icons {
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .deleted_notes_button {
+    padding: 5px 8px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .content_container {
+    width: 100%;
+    height: calc(100vh - 124px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input_container {
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .input_container p {
+    font-size: 24px;
+    height: 32px;
+    color: #ffe19f;
+  }
+  
+  .input_field {
+    height: 24px;
+    width: 250px;
+    font-size: 18px;
+  }
+
+  .note_container {
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 20px; */
+    gap: 12px;
+  }
+  
+  .archive_container {
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 20px; */
+    gap: 12px;
+  }
+  
+  .trash_container {
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    gap: 12px;
+  }
+
+  .input_container {
+    height: 196px;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .input_container p {
+    font-size: 18px;
+  }
+}

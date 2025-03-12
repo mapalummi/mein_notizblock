@@ -4,14 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meine Notizen</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/icons/icons8-apfelnoten-120.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./assets/icons/icons8-apfelnoten-120.png" type="image/x-icon" />
 
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/note.css" />
+    <link rel="stylesheet" href="./styles/media.css">
 
     <script src="./scripts/template.js"></script>
     <script src="./script.js"></script>
@@ -28,36 +25,22 @@
           <input class="input_field" id="input_title" type="text" required />
           <p>Text</p>
           <input class="input_field" id="input_text" type="text" required />
-          <a onclick="addNote()" href="#"
-            ><img
-              class="add_btn"
-              src="./assets/icons/icons8-hinzufügen.png"
-              alt=""
-          /></a>
+          <a onclick="addNote()" href="#"><img class="add_btn" src="./assets/icons/icons8-hinzufügen.png" alt="" /></a>
         </div>
 
         <div class="note_container" id="note_content"></div>
-        <div class="archive_container" id="archive_content">
-          Archivierte Notizen
-        </div>
+        <div class="archive_container" id="archive_content">Archivierte Notizen</div>
 
         <div onclick="removeOverlay()" id="overlay" class="overlay d_none">
           <div class="trash_container" id="trash_content"></div>
         </div>
 
         <div>
-          <button
-            class="deleted_notes_button button_grey"
-            onclick="addOverlay()"
-          >
-            Show Deleted Notes
-          </button>
+          <button class="deleted_notes_button button_grey" onclick="addOverlay()">Show Deleted Notes</button>
         </div>
       </div>
 
-      <footer>
-        Icons von<a target="_blank" href="https://icons8.com">Icons8</a>
-      </footer>
+      <footer>Icons von<a target="_blank" href="https://icons8.com">Icons8</a></footer>
     </div>
   </body>
 </html>
