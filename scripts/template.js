@@ -1,4 +1,3 @@
-//Funktioniert:
 function getNoteTemplate(i) {
   return `<div class="note">
             <p><b>${myTitles[i]}</b><br><i>${myNotes[i]}</p>
@@ -19,7 +18,6 @@ function getArchiveTemplate(iArchive) {
           </div>`;
 }
 
-//Funktioniert:
 function getTrashNoteTemplate(iTrash) {
   return `<div class="del_note">
             <p><b>${trashNotesTitles[iTrash]}</b><br><br>${trashNotes[iTrash]}</p>

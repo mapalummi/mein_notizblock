@@ -1,15 +1,12 @@
 let myTitles = ["Testing", "Exercise", "What"];
 let myNotes = ["Test", "Sets", "This"];
-
 let archiveNotesTitles = [];
 let archiveNotes = [];
-
 let trashNotesTitles = [];
 let trashNotes = [];
 
 function renderNotes() {
   noteFromLocalStorage();
-
   document.getElementById("note_content").innerHTML = "";
 
   for (let i = 0; i < myNotes.length; i++) {
@@ -19,7 +16,6 @@ function renderNotes() {
 
 function renderArchive() {
   archiveFromLocalStorage();
-
   document.getElementById("archive_content").innerHTML = "";
 
   for (let iArchive = 0; iArchive < archiveNotes.length; iArchive++) {
@@ -30,7 +26,6 @@ function renderArchive() {
 
 function renderTrashNotes() {
   trashFromLocalStorage();
-
   document.getElementById("trash_content").innerHTML = "";
 
   for (let iTrash = 0; iTrash < trashNotes.length; iTrash++) {
@@ -51,24 +46,19 @@ function addNote() {
     myTitles.push(inputTitleValue);
     myNotes.push(inputTextValue);
 
-    //Achtung neu!
     noteToLocalStorage();
     renderNotes();
-
-    //Kann das weg?
-    // renderArchive();
-    // renderTrashNotes();
 
     document.getElementById("input_title").value = "";
     document.getElementById("input_text").value = "";
   }
 }
 
-//Neu!
 function noteToLocalStorage() {
   localStorage.setItem("myTitles", JSON.stringify(myTitles));
   localStorage.setItem("myNotes", JSON.stringify(myNotes));
 }
+
 function noteFromLocalStorage() {
   let newTitles = JSON.parse(localStorage.getItem("myTitles"));
   let newNotes = JSON.parse(localStorage.getItem("myNotes"));
@@ -79,7 +69,6 @@ function noteFromLocalStorage() {
   }
 }
 
-//NEU
 function archiveToLocalStorage() {
   localStorage.setItem(
     "archiveNotesTitles",
@@ -87,6 +76,7 @@ function archiveToLocalStorage() {
   );
   localStorage.setItem("archiveNotes", JSON.stringify(archiveNotes));
 }
+
 function archiveFromLocalStorage() {
   let newArchiveTitles = JSON.parse(localStorage.getItem("archiveNotesTitles"));
   let newArchiveNotes = JSON.parse(localStorage.getItem("archiveNotes"));
@@ -97,11 +87,11 @@ function archiveFromLocalStorage() {
   }
 }
 
-//NEU
 function trashToLocalStorage() {
   localStorage.setItem("trashNotesTitles", JSON.stringify(trashNotesTitles));
   localStorage.setItem("trashNotes", JSON.stringify(trashNotes));
 }
+
 function trashFromLocalStorage() {
   let newTrashTitles = JSON.parse(localStorage.getItem("trashNotesTitles"));
   let newTrashNotes = JSON.parse(localStorage.getItem("trashNotes"));
@@ -115,16 +105,13 @@ function trashFromLocalStorage() {
 function noteToTrash(i) {
   let trashNote = myNotes.splice(i, 1);
   trashNotes.push(trashNote[0]);
-
   let trashNoteTitle = myTitles.splice(i, 1);
   trashNotesTitles.push(trashNoteTitle[0]);
 
   noteToLocalStorage();
   renderNotes();
-
   archiveToLocalStorage();
   renderArchive();
-
   trashToLocalStorage();
   renderTrashNotes();
 }
@@ -132,16 +119,13 @@ function noteToTrash(i) {
 function noteToArchive(i) {
   let archiveNote = myNotes.splice(i, 1);
   archiveNotes.push(archiveNote[0]);
-
   let archiveNoteTitle = myTitles.splice(i, 1);
   archiveNotesTitles.push(archiveNoteTitle[0]);
 
   noteToLocalStorage();
   renderNotes();
-
   archiveToLocalStorage();
   renderArchive();
-
   trashToLocalStorage();
   renderTrashNotes();
 }
@@ -149,16 +133,13 @@ function noteToArchive(i) {
 function archiveNoteToTrash(iArchive) {
   let archiveNote = archiveNotes.splice(iArchive, 1);
   trashNotes.push(archiveNote[0]);
-
   let archiveNoteTitle = archiveNotesTitles.splice(iArchive, 1);
   trashNotesTitles.push(archiveNoteTitle[0]);
 
   noteToLocalStorage();
   renderNotes();
-
   archiveToLocalStorage();
   renderArchive();
-
   trashToLocalStorage();
   renderTrashNotes();
 }
@@ -166,16 +147,13 @@ function archiveNoteToTrash(iArchive) {
 function archiveNoteRestore(iArchive) {
   let restoreArchiveNote = archiveNotes.splice(iArchive, 1);
   myNotes.push(restoreArchiveNote[0]);
-
   let restoreArchiveTitle = archiveNotesTitles.splice(iArchive, 1);
   myTitles.push(restoreArchiveTitle[0]);
 
   noteToLocalStorage();
   renderNotes();
-
   archiveToLocalStorage();
   renderArchive();
-
   trashToLocalStorage();
   renderTrashNotes();
 }
@@ -183,16 +161,13 @@ function archiveNoteRestore(iArchive) {
 function deletedNoteRestore(iTrash) {
   let restoreNote = trashNotes.splice(iTrash, 1);
   archiveNotes.push(restoreNote[0]);
-
   let restoreTitle = trashNotesTitles.splice(iTrash, 1);
   archiveNotesTitles.push(restoreTitle[0]);
 
   noteToLocalStorage();
   renderNotes();
-
   archiveToLocalStorage();
   renderArchive();
-
   trashToLocalStorage();
   renderTrashNotes();
 }
@@ -203,10 +178,8 @@ function deleteNote(iTrash) {
 
   noteToLocalStorage();
   renderNotes();
-
   archiveToLocalStorage();
   renderArchive();
-
   trashToLocalStorage();
   renderTrashNotes();
 }
